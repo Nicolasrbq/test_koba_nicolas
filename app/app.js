@@ -1,4 +1,6 @@
-angular.module('main', ['ui.router', 'dndLists', 'lbServices'])
+var socket = io();
+
+angular.module('main', ['ui.router', 'dndLists'])
 
 .config(function($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
     $locationProvider.html5Mode(false);

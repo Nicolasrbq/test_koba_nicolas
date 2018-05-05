@@ -33,6 +33,27 @@
         <div class="column-title">
             <p>Entretien <span>{{ HomeView.model.list.column2.length }}</span></p>
         </div>
-
+        <ul dnd-list="list" dnd-drop="HomeView.onDrop(HomeView.model.list.column2, item, index)">
+            <li ng-repeat="item in HomeView.model.list.column2" dnd-draggable="HomeView.getSelectedItemsIncluding(HomeView.model.list.column2, item)" dnd-moved="HoemView.onMoved(HomeView.model.list)" dnd-effect-allowed="move" dnd-selected="item.selected = !item.selected"
+                ng-class="{'selected': HomeView.model.selected === item}">
+                <div class="contact-card">
+                    <div class="top">
+                        <div class="left">
+                            <img ng-src="{{ item.ProfileImg }}" alt="image profile user {{ item.Id }}" />
+                        </div>
+                        <div class="right">
+                            <span>{{ item.FirstName }} {{ item.LastName }}</span>
+                            <p>{{ item.JobTitle }}</p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <span class="stars">{{ item.Stars }}</span>
+                        <span>{{ item.Likes }}</span>
+                        <span>{{ item.Comments }}</span>
+                        <span>{{ item.Messages }}</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </main>

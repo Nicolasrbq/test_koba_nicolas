@@ -71,5 +71,9 @@ angular.module('main').controller('HomeController', ['$scope', function($scope) 
                 }]
             }
         };
+
+        socket.on('connection', function() {
+            socket.emit('emi', 'test');
+        })
     }
 }]);
