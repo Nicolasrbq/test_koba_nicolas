@@ -61,6 +61,7 @@ body {
 .column ul li {
     list-style-type: none;
     margin-bottom: 10px;
+    background: white;
 }
 
 .column ul li:last-child {
@@ -77,18 +78,39 @@ body {
     padding: 10px 20px;
 }
 
+.contact-card .top .left,
+.contact-card .top .right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contact-card .top .left {
+    padding-right: 20px;
+}
+
 .contact-card .top img {
     height: 50px;
     border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
 }
 
-.contact-card .top p {
+.contact-card .top span {
     display: inline-block;
     vertical-align: middle;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .contact-card .bottom {
     padding: 10px 20px;
+}
+
+.contact-card .bottom .stars {
+    background: green;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 8px;
+}
+
+.contact-card .bottom span {
+    display: inline-block;
 }

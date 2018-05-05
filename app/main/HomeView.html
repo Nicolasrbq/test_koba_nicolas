@@ -6,15 +6,21 @@
         <div class="column-title">
             <p>A rencontrer <span>{{ HomeView.model.list.column1.length }}</span></p>
         </div>
-        <ul dnd-list="list">
-            <li ng-repeat="item in HomeView.model.list.column1" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="HomeView.model.selected = item" ng-class="{'selected': HomeView.model.selected === item}">
+        <ul dnd-list="list" dnd-drop="HomeView.onDrop(HomeView.model.list.column1, item, index)">
+            <li ng-repeat="item in HomeView.model.list.column1" dnd-draggable="HomeView.getSelectedItemsIncluding(HomeView.model.list.column1, item)" dnd-moved="HoemView.onMoved(HomeView.model.list)" dnd-effect-allowed="move" dnd-selected="item.selected = !item.selected"
+                ng-class="{'selected': HomeView.model.selected === item}">
                 <div class="contact-card">
                     <div class="top">
-                        <img ng-src="{{ item.ProfileImg }}" alt="image profile user {{ item.Id }}" />
-                        <p>{{ item.FirstName }} {{ item.LastName }}</p>
+                        <div class="left">
+                            <img ng-src="{{ item.ProfileImg }}" alt="image profile user {{ item.Id }}" />
+                        </div>
+                        <div class="right">
+                            <span>{{ item.FirstName }} {{ item.LastName }}</span>
+                            <p>{{ item.JobTitle }}</p>
+                        </div>
                     </div>
                     <div class="bottom">
-                        <span>{{ item.Stars }}</span>
+                        <span class="stars">{{ item.Stars }}</span>
                         <span>{{ item.Likes }}</span>
                         <span>{{ item.Comments }}</span>
                         <span>{{ item.Messages }}</span>
@@ -25,7 +31,8 @@
     </div>
     <div class="column">
         <div class="column-title">
-            <p>Entretien <span>0</span></p>
+            <p>Entretien <span>{{ HomeView.model.list.column2.length }}</span></p>
         </div>
+
     </div>
 </main>

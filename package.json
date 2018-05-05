@@ -20,5 +20,9 @@
     "homepage": "https://github.com/Nicolasrbq/test_koba_nicolas#readme",
     "devDependencies": {
         "lite-server": "^2.3.0"
+    },
+    "dependencies": {
+        "socket.io": "^2.1.0",
+        "socketio-auth": "^0.1.0"
     }
 }

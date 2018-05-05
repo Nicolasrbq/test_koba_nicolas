@@ -1,4 +1,4 @@
-angular.module('main', ['ui.router'])
+angular.module('main', ['ui.router', 'dndLists', 'lbServices'])
 
 .config(function($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
     $locationProvider.html5Mode(false);
