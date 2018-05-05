@@ -4,8 +4,24 @@
 <main class="main">
     <div class="column">
         <div class="column-title">
-            <p>A rencontrer <span>0</span></p>
+            <p>A rencontrer <span>{{ HomeView.model.list.column1.length }}</span></p>
         </div>
+        <ul dnd-list="list">
+            <li ng-repeat="item in HomeView.model.list.column1" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="HomeView.model.selected = item" ng-class="{'selected': HomeView.model.selected === item}">
+                <div class="contact-card">
+                    <div class="top">
+                        <img ng-src="{{ item.ProfileImg }}" alt="image profile user {{ item.Id }}" />
+                        <p>{{ item.FirstName }} {{ item.LastName }}</p>
+                    </div>
+                    <div class="bottom">
+                        <span>{{ item.Stars }}</span>
+                        <span>{{ item.Likes }}</span>
+                        <span>{{ item.Comments }}</span>
+                        <span>{{ item.Messages }}</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
     <div class="column">
         <div class="column-title">

@@ -52,3 +52,43 @@ body {
     font-size: 14px;
     vertical-align: 3px;
 }
+
+.column ul {
+    margin: 0;
+    padding: 10px;
+}
+
+.column ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.column ul li:last-child {
+    margin: 0;
+}
+
+.contact-card {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.contact-card .top {
+    border-bottom: 1px solid lightgrey;
+    padding: 10px 20px;
+}
+
+.contact-card .top img {
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contact-card .top p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contact-card .bottom {
+    padding: 10px 20px;
+}
